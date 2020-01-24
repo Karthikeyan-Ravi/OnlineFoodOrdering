@@ -1,0 +1,6 @@
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\obj\Debug\OnlineFoodOrdering.csprojAssemblyReference.cache
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\bin\Debug\OnlineFoodOrdering.exe.config
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\bin\Debug\OnlineFoodOrdering.exe
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\bin\Debug\OnlineFoodOrdering.pdb
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\obj\Debug\OnlineFoodOrdering.exe
+C:\Users\Student\source\repos\OnlineFoodOrdering\OnlineFoodOrdering\obj\Debug\OnlineFoodOrdering.pdb
