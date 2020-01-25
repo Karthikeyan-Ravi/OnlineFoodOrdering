@@ -17,7 +17,7 @@ namespace OnlineFoodOrdering
             return sqlConnection;
 
         }
-        public void AddDetailsToDatabase(List<Customer> details,SqlConnection sqlConnection)
+        /*public void AddDetailsToDatabase(List<Customer> details,SqlConnection sqlConnection)
         {
             string name;
             string phoneNumber;
@@ -61,7 +61,7 @@ namespace OnlineFoodOrdering
                     sqlCommand.ExecuteNonQuery();
                 }
             }
-        }
+        }*/
         public bool CheckLogInDetails(string mail,string password,SqlConnection connection)
         {
             

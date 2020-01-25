@@ -1,32 +1,51 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 namespace OnlineFoodOrdering
 {
-    public class CustomerRepository
+    public class CustomerRepository : CustomerAdminFields
     {
-        string fullName;
-        string phoneNumber;
-        string mail;
-        string password;
         string logInMail;
         string logInPassword;
-        public static List<Customer> userDetails = new List<Customer>();
+        
         public void GetSignUpDetails()
         {
             Console.WriteLine("Enter the Name");
-            fullName = Validation.GetAndValidateName();
+            FullName = Validation.GetAndValidateName();
             Console.WriteLine("Enter the mobile number");
-            phoneNumber = Validation.GetAndValidatePhoneNumber();
+            PhoneNumber = Validation.GetAndValidatePhoneNumber();
             Console.WriteLine("Enter the mail id");
-            mail = Validation.GetAndValidateMail();
+            Mail = Validation.GetAndValidateMail();
             Console.WriteLine("Enter the password");
-            password = Validation.GetAndValidatePassword();
-            Customer customer = new Customer(fullName, phoneNumber, mail, password,"user");
-            userDetails.Add(customer);
+            Password = Validation.GetAndValidatePassword();
+            string query = "Registration";
             DBUtils dBUtils = new DBUtils();
+            SqlConnection sqlConnection = dBUtils.ConnectionMethod();
+            using (SqlCommand sqlCommand=new SqlCommand(query,sqlConnection))
+            {
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlParameter sqlParameter = new SqlParameter();
+                sqlCommand.Parameters.AddWithValue("@FullName", FullName);
+                sqlCommand.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+                sqlCommand.Parameters.AddWithValue("@Mail", Mail);
+                sqlCommand.Parameters.AddWithValue("@Password", Password);
+                sqlCommand.Parameters.AddWithValue("@Role", "User");
+                sqlConnection.Open();
+                int rows=sqlCommand.ExecuteNonQuery();
+                if (rows >= 1)
+                    Console.WriteLine("Registration successfull");
+                else
+                {
+                    Console.WriteLine("Registration not successfull");
+                    GetSignUpDetails();
+                }
+            }
+            //Customer customer = new Customer(fullName, phoneNumber, mail, password,"user");
+            //userDetails.Add(customer);
+            ///DBUtils dBUtils = new DBUtils();
             //dBUtils.ConnectionMethod();
-            dBUtils.AddDetailsToDatabase(userDetails, dBUtils.ConnectionMethod());
-            Console.WriteLine("Registration successful");
+            //dBUtils.AddDetailsToDatabase(userDetails, dBUtils.ConnectionMethod());
+            //Console.WriteLine("Registration successful");
         }
         public void GetLogInDetails()
         {

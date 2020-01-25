@@ -19,7 +19,7 @@ namespace OnlineFoodOrdering
             
             foreach(UserChoice userchoice in Enum.GetValues(typeof(UserChoice)))
             {
-                Console.WriteLine(userchoice.ToString() + "\n");
+                Console.WriteLine("\n"+userchoice.ToString() + "\n");
             }
             Console.WriteLine("Enter the choice");
             string choice = Console.ReadLine();
@@ -31,9 +31,9 @@ namespace OnlineFoodOrdering
                         CustomerRepository customerRepository = new CustomerRepository();
                         foreach(CustomerChoice customerChoice1 in Enum.GetValues(typeof(CustomerChoice)))
                         {
-                            Console.WriteLine(customerChoice1.ToString() + "\n");
+                            Console.WriteLine("\n" + customerChoice1.ToString() + "\n");
                         }
-                        Console.WriteLine("Enter the customer choice");
+                        Console.WriteLine("\n"+"Enter the customer choice"+ "\n" );
                         choice = Console.ReadLine();
                         CustomerChoice customerChoice = (CustomerChoice)Enum.Parse(typeof(CustomerChoice), choice);
                         switch(customerChoice)
@@ -41,6 +41,7 @@ namespace OnlineFoodOrdering
                             case CustomerChoice.SignUp :
                                 {
                                     customerRepository.GetSignUpDetails();
+                                    //customerRepository.GetLogInDetails();
                                 }
                                 break;
                             case CustomerChoice.LogIn:
@@ -64,6 +65,7 @@ namespace OnlineFoodOrdering
                             case CustomerChoice.SignUp:
                                 {
                                     admin.GetAdminSignUpDetails();
+                                    //admin.GetAdminLogInDetails();
                                 }
                                 break;
                             case CustomerChoice.LogIn:

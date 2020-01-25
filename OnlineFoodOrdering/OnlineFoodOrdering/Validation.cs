@@ -145,9 +145,9 @@ namespace OnlineFoodOrdering
             }
             return logInPassword;
         }
-        public static bool ValidateLogInDetails(List<Customer> details)
+        public static bool ValidateLogInDetails(List<CustomerAdminFields> details)
         {
-            foreach (Customer customer in details)
+            foreach (CustomerAdminFields customer in details)
             {
                 if (((customer.Mail).Equals(logInMail)) && ((customer.Password).Equals(logInPassword)))
                 {

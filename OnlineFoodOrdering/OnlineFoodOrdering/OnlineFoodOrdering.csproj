@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="CustomerRepository.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerAdminFields.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="Validation.cs" />
