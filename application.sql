@@ -1,4 +1,4 @@
-INSERT INTO RegistrationTable(FullName,PhoneNumber,Mail,Password,Role)VALUES('vignesh','9944711655','jeevabt@gmail.com','Mancity!11','user');
+INSERT INTO RegistrationTable(FullName,PhoneNumber,Mail,Password,Role)VALUES('Vignesh','9944711655','jeevabt@gmail.com','Mancity!11','User');
 INSERT INTO RegistrationTable(FullName,PhoneNumber,Mail,Password,Role)VALUES('Ashok','9944367638','ashok.jeev@gmail.com','Arsenal!11','ADMIN');
 INSERT INTO RegistrationTable(FullName,PhoneNumber,Mail,Password,Role)VALUES('Karthi','9003796721','karthikeyan.ravi11@gmail.com','Karthi!11','user');
 INSERT INTO RegistrationTable(FullName,PhoneNumber,Mail,Password,Role)VALUES('Bemina','8220385215','beminaravi@gmail.com','Bemina@27','user');
